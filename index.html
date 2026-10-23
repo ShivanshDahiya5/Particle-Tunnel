@@ -97,3 +97,10 @@
         const parallax = 0.12;
         const pointerRadius = 2.4;
         const pointerStrength = 0.8;
+
+        const canvas = document.getElementById('scene');
+        const renderer = new THREE.WebGL1Renderer({ canvas, antialias: true });
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight, false);
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.VSMShadowMap;
