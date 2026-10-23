@@ -64,3 +64,10 @@
         import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
         import { GammaCorrectionShader } from 'three/addons/shaders/GammaCorrectionShader.js';
         import { CopyShader } from 'three/addons/shaders/CopyShader.js';
+
+        const Lerp = (a, b, t) => a + (b - a) * t;
+        const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+        function hexToVec3(hex) {
+            const n = parseInt(hex.slice(1), 16);
+            return new THREE.Vector3(((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255);
+        }
