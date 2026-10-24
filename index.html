@@ -165,3 +165,8 @@ void main(){
         bloomComposer.addPass(renderScene);
         bloomComposer.addPass(new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 0.7, 0.6, 0));
         bloomComposer.addPass(new ShaderPass(GammaCorrectionShader));
+
+        const finalPass = new ShaderPass(FinalPass);
+        finalPass.uniforms.bloomTexture.value = bloomComposer.renderTarget1.texture;
+        finalPass.uniforms.torusTexture.value = torusComposer.renderTarget1.texture;
+
