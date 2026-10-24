@@ -150,3 +150,10 @@ void main(){
 }
 `
         };
+
+        const renderScene = new RenderPass(scene, camera);
+
+        const torusComposer = new EffectComposer(renderer);
+        torusComposer.renderToScreen = false;
+        torusComposer.addPass(renderScene);
+        torusComposer.addPass(new ShaderPass(GammaCorrectionShader));
