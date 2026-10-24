@@ -229,3 +229,10 @@ varying float vFade; varying vec3 vColor;
 ${tunnelSnoise}
 void main() {
   vec3 wp = vec3(position.x * 7.0, 0.0, position.z * 25.0);
+  wp.x += position.y * 6.0;
+  float wn = snoise(vec3(wp.x * 0.08, wp.z * 0.08, uTime * 0.15)) * 2.0;
+  wn += snoise(vec3(wp.x * 0.16, wp.z * 0.16, uTime * 0.3)) * 0.8;
+
+  float tunnelR = 12.0;
+  float currentSliceRadius = sqrt(max(0.0, 17.64 - position.z * position.z));
+  float maxSliceWidth = 9.2195 * currentSliceRadius;
