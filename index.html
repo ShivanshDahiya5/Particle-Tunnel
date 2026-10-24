@@ -264,3 +264,8 @@ void main() {
   gl_Position = projectionMatrix * mvPosition;
 }
 `,
+
+            fragmentShader: `
+uniform float uOpacity; uniform float uBrightness; uniform float uAppear;
+varying float vFade; varying vec3 vColor;
+void main() {
