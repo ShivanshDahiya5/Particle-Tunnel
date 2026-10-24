@@ -170,3 +170,8 @@ void main(){
         finalPass.uniforms.bloomTexture.value = bloomComposer.renderTarget1.texture;
         finalPass.uniforms.torusTexture.value = torusComposer.renderTarget1.texture;
 
+        const finalComposer = new EffectComposer(renderer);
+        finalComposer.addPass(renderScene);
+        finalComposer.addPass(finalPass);
+
+        const tunnelGeometry = new THREE.SphereGeometry(4.2, 200, 600);
