@@ -285,3 +285,10 @@ void main() {
         const group = new THREE.Group();
         group.add(tunnelPoints);
         scene.add(group);
+
+        const N = atmoCount;
+        const positions = new Float32Array(N * 3), sizes = new Float32Array(N), seeds = new Float32Array(N);
+        for (let i = 0; i < N; i++) {
+            positions[i * 3] = 2 * Math.random() - 1; positions[i * 3 + 1] = 2 * Math.random() - 1; positions[i * 3 + 2] = 2 * Math.random() - 1;
+            sizes[i] = atmoSize * (0.4 + Math.random()); seeds[i] = Math.random();
+        }
