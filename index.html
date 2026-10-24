@@ -216,3 +216,10 @@ float snoise(vec3 v){
   return 42.0 * dot(m*m, vec4(dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3)));
 }
 `;
+        const tunnelMaterial = new THREE.ShaderMaterial({
+            transparent: true,
+            depthWrite: false,
+            blending: THREE.AdditiveBlending,
+            uniforms: tunnelUniforms,
+            vertexShader: `
+uniform float uTime; uniform float uSize; uniform float uSwirl; uniform float uScale;
