@@ -175,3 +175,10 @@ void main(){
         finalComposer.addPass(finalPass);
 
         const tunnelGeometry = new THREE.SphereGeometry(4.2, 200, 600);
+        const tunnelUniforms = {
+            uTime: { value: 0 },
+            uAppear: { value: 0 },
+            uColLow: { value: hexToVec3(colorLow) },
+            uColHigh: { value: hexToVec3(colorHigh) },
+            uOpacity: { value: opacity },
+            uSize: { value: pointSize },
