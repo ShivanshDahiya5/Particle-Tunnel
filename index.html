@@ -281,3 +281,7 @@ void main() {
         const tunnelPoints = new THREE.Points(tunnelGeometry, tunnelMaterial);
         tunnelPoints.frustumCulled = false;
         tunnelPoints.layers.enable(LAYERS.ENTIRE_SCENE);
+
+        const group = new THREE.Group();
+        group.add(tunnelPoints);
+        scene.add(group);
