@@ -304,3 +304,8 @@ void main() {
             depthWrite: false,
             depthTest: false,
             uniforms: {
+                uTime: { value: 0 },
+                uColor: { value: hexToVec3(atmoColor) },
+                uRes: { value: new THREE.Vector2(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio) }
+            },
+            vertexShader: `
