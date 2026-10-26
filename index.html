@@ -296,3 +296,11 @@ void main() {
         atmoGeometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
         atmoGeometry.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1));
         atmoGeometry.setAttribute('seed', new THREE.Float32BufferAttribute(seeds, 1));
+
+
+        const atmoMaterial = new THREE.ShaderMaterial({
+            transparent: true,
+            blending: THREE.AdditiveBlending,
+            depthWrite: false,
+            depthTest: false,
+            uniforms: {
