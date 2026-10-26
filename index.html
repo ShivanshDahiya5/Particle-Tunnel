@@ -343,3 +343,11 @@ void main(){ vec2 p = gl_PointCoord - 0.5; float l = length(p); if (l > 0.5) dis
         };
 
         scene.add(atmoPoints);
+
+        let scrollTarget = 0, scrollSmooth = 0, scrollCurrent = 0;
+        const updateScroll = () => {
+            const scrollHeight = document.documentElement.scrollHeight;
+            const innerHeight = window.innerHeight;
+            if (scrollHeight > innerHeight) {
+                scrollTarget = clamp(window.scrollY / (scrollHeight - innerHeight), 0, 1);
+            } else {
