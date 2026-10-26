@@ -367,3 +367,10 @@ void main(){ vec2 p = gl_PointCoord - 0.5; float l = length(p); if (l > 0.5) dis
             POINTER.active = true;
             POINTER.lastMove = performance.now();
         });
+        window.addEventListener('mouseout', () => {
+            POINTER.active = false;
+        });
+
+        const _ndc = new THREE.Vector3(), _dir = new THREE.Vector3(), _tgt = new THREE.Vector3();
+        function updatePointerWorld() {
+            _tgt.set(0, 0, 0);
