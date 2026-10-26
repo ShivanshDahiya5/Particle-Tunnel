@@ -324,3 +324,9 @@ void main(){
   gl_Position = projectionMatrix * mv;
 }
 `,
+            fragmentShader: `
+uniform vec3 uColor; varying float vA;
+void main(){ vec2 p = gl_PointCoord - 0.5; float l = length(p); if (l > 0.5) discard;
+  float tex = smoothstep(0.5, 0.0, l); gl_FragColor = vec4(uColor * tex, tex * vA * 0.6); }
+`
+        });
