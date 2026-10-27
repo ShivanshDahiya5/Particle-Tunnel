@@ -445,3 +445,9 @@ void main(){ vec2 p = gl_PointCoord - 0.5; float l = length(p); if (l > 0.5) dis
             camera.layers.set(LAYERS.BLOOM_SCENE); bloomComposer.render();
             camera.layers.set(LAYERS.ENTIRE_SCENE); finalComposer.render();
         }
+
+        render();
+    </script>
+</body>
+
+</html>
