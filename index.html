@@ -440,4 +440,8 @@ void main(){ vec2 p = gl_PointCoord - 0.5; float l = length(p); if (l > 0.5) dis
             mouse.x = Lerp(mouse.x, mouseTarget.x, 0.06);
             mouse.y = Lerp(mouse.y, mouseTarget.y, 0.06);
             sceneObj.render(scrollCurrent, mouse);
-            
+
+            camera.layers.set(LAYERS.TORUS_SCENE); torusComposer.render();
+            camera.layers.set(LAYERS.BLOOM_SCENE); bloomComposer.render();
+            camera.layers.set(LAYERS.ENTIRE_SCENE); finalComposer.render();
+        }
