@@ -422,3 +422,13 @@ void main(){ vec2 p = gl_PointCoord - 0.5; float l = length(p); if (l > 0.5) dis
             renderer.setPixelRatio(dpr);
             renderer.setSize(w, h, false);
             camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+            torusComposer.setPixelRatio(dpr);
+            torusComposer.setSize(w, h);
+            bloomComposer.setPixelRatio(dpr);
+            bloomComposer.setSize(w, h);
+            finalComposer.setPixelRatio(dpr);
+            finalComposer.setSize(w, h);
+
+            atmoMaterial.uniforms.uRes.value.set(w * dpr, h * dpr);
+        });
