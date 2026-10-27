@@ -407,3 +407,10 @@ void main(){ vec2 p = gl_PointCoord - 0.5; float l = length(p); if (l > 0.5) dis
                 tunnelUniforms.uSwirl.value = swirl * (1 + scroll * scrollSwirl);
                 this.rollPhase += dt * (spin + scroll * scrollRoll);
                 group.rotation.z = this.rollPhase;
+
+                tunnelUniforms.uCursor.value.copy(POINTER.world);
+                tunnelUniforms.uActivity.value = POINTER.activity;
+                const elapsed = (performance.now() - this.appearStart) / 1000;
+                tunnelUniforms.uAppear.value = Math.max(0, Math.min(1, (elapsed - 0.2) / 1.4));
+            }
+        };
