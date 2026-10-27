@@ -399,3 +399,7 @@ void main(){ vec2 p = gl_PointCoord - 0.5; float l = length(p); if (l > 0.5) dis
                 const dt = Math.min(0.05, t - this.t0);
                 this.t0 = t;
                 tunnelUniforms.uTime.value = t;
+
+                camera.position.set(m.x * parallax, m.y * parallax, 20 - scroll * scrollFly);
+                camera.lookAt(m.x * steer, m.y * steer, camera.position.z - 12);
+                updatePointerWorld();
