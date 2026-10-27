@@ -436,3 +436,8 @@ void main(){ vec2 p = gl_PointCoord - 0.5; float l = length(p); if (l > 0.5) dis
         function render() {
             requestAnimationFrame(render);
             scrollSmooth = Lerp(scrollSmooth, scrollTarget, 0.10);
+            scrollCurrent = Lerp(scrollCurrent, scrollSmooth, 0.06);
+            mouse.x = Lerp(mouse.x, mouseTarget.x, 0.06);
+            mouse.y = Lerp(mouse.y, mouseTarget.y, 0.06);
+            sceneObj.render(scrollCurrent, mouse);
+            
